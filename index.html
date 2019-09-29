@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terrance In VR</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+
+    <link rel="stylesheet" href="./src/app.css">
+</head>
+
+<body>
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+
+        <a-assets>
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+            <img id="plainBrick" src="src/assets/plain-brick.jpg"/>
+        </a-assets>
+        <!---Box -->
+        <a-box src="#plainBrick" 
+            color="#777" width="7" 
+            height="10" depth="5" 
+            position="0 0 -10"  
+            normal-map="#plainBrick"
+            roughness="0.7"
+            >
+        </a-box>
+        <a-cylinder id="ground" src="#groundTexture" radius="32" height="0.1"></a-cylinder>
+        <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+        <a-plane material="color: #eeee" rotation="-90 0 0" scale="10 10 1" />
+
+    </a-scene>
+
+    <script src="https://threejs.org/build/three.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
+</body>
+
+</html>
